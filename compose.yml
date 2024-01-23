@@ -1,0 +1,17 @@
+version: '3'
+services:
+ bind9:
+  container_name: dns_local
+  image: ubuntu/bind9:latest
+
+  ports:
+    - "53:53/tcp"
+    - "53:53/udp"
+  volumes:
+    - ./config:/etc/bind
+    - ./cache:/var/cache/bind
+    - ./records:/var/lib/bind
+  environment:
+    - BIND9_USER=${BIND9_USER}
+    - TZ=${TZ}
+  restart: unless-stopped

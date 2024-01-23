@@ -1,0 +1,17 @@
+$TTL 2d
+
+$ORIGIN domain.local.
+
+@       IN      SOA     ns.domain.local.       info.domain.local. (
+                                                23012024
+                                                12h
+                                                15m
+                                                3w
+                                                2h
+                                                    )
+        IN     NS       ns.domain.local.
+ns      IN      A       192.168.50.134
+
+;add records
+test1   IN      A       192.168.50.134
+kali   IN       A       192.168.50.5
